@@ -1,0 +1,93 @@
+<?xml version="1.0" encoding="utf-8"?>
+<navigation xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:id="@+id/my_nav"
+    app:startDestination="@id/startFragment">
+
+    <fragment
+        android:id="@+id/startFragment"
+        android:name="com.example.myapplication.ui.navigation1.StartFragment"
+        android:label="Start"
+        tools:layout="@layout/fragment_start">
+        <action
+            android:id="@+id/action_startFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+        <action
+            android:id="@+id/action_startFragment_to_signinFragment"
+            app:destination="@id/signinFragment" />
+        <action
+            android:id="@+id/action_startFragment_to_navigation"
+            app:destination="@id/navigation" />
+    </fragment>
+    <fragment
+        android:id="@+id/loginFragment"
+        android:name="com.example.myapplication.ui.navigation1.LoginFragment"
+        android:label="Login"
+        tools:layout="@layout/fragment_login" />
+    <fragment
+        android:id="@+id/signinFragment"
+        android:name="com.example.myapplication.ui.navigation1.SigninFragment"
+        android:label="Signin"
+        tools:layout="@layout/fragment_signin">
+        <action
+            android:id="@+id/action_signinFragment_to_loginFragment"
+            app:destination="@id/loginFragment" />
+    </fragment>
+    <navigation
+        android:id="@+id/navigation"
+        app:startDestination="@id/chatBodyFragment">
+        <fragment
+            android:id="@+id/chatBodyFragment"
+            android:name="com.example.myapplication.ui.navigation2.ChatBodyFragment"
+            android:label="Chats"
+            tools:layout="@layout/fragment_chat_body">
+            <action
+                android:id="@+id/action_chatBodyFragment_to_contactFragment"
+                app:destination="@id/contactFragment" />
+            <action
+                android:id="@+id/action_chatBodyFragment_to_messagesBodyFragment"
+                app:destination="@id/messagesBodyFragment" />
+        </fragment>
+        <fragment
+            android:id="@+id/settingFragment"
+            android:name="com.example.myapplication.ui.navigation2.SettingFragment"
+            android:label="Setting"
+            tools:layout="@layout/fragment_setting" />
+        <fragment
+            android:id="@+id/profileFragment"
+            android:name="com.example.myapplication.ui.navigation2.ProfileFragment"
+            android:label="Profile"
+            tools:layout="@layout/fragment_profile" />
+        <fragment
+            android:id="@+id/contactFragment"
+            android:name="com.example.myapplication.ui.navigation2.ContactFragment"
+            android:label="Contact"
+            tools:layout="@layout/fragment_contact">
+            <action
+                android:id="@+id/action_contactFragment_to_messagesBodyFragment"
+                app:destination="@id/messagesBodyFragment" />
+        </fragment>
+        <fragment
+            android:id="@+id/messagesBodyFragment"
+            android:name="com.example.myapplication.ui.navigation2.MessagesBodyFragment"
+            android:label="{contactName}"
+            tools:layout="@layout/fragment_messages_body">
+            <argument
+                android:name="contactName"
+                app:argType="string" />
+            <argument
+                android:name="contact_detail"
+                app:argType="com.example.myapplication.datasource.models.ContactModel"
+                app:nullable="true" />
+            <argument
+                android:name="chatRoomDetail"
+                app:argType="com.example.myapplication.datasource.models.ChatModel"
+                app:nullable="true" />
+            <argument
+                android:name="contactInfo"
+                app:argType="com.example.myapplication.datasource.models.UserModel"
+                app:nullable="true" />
+        </fragment>
+    </navigation>
+</navigation>

@@ -1,0 +1,105 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ui.navigation1.StartFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
+
+        <ImageView
+            android:layout_marginTop="20sp"
+            android:id="@+id/startFragmentImageView"
+            android:layout_width="250dp"
+            android:layout_height="250dp"
+            android:contentDescription="@string/todo"
+            android:src="@mipmap/chat_box"
+            app:layout_constraintBottom_toTopOf="@id/startFragmentLogoTxt"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+        <TextView
+            android:id="@+id/startFragmentLogoTxt"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="20dp"
+            android:gravity="center"
+            android:text="@string/welcome_to_quick_chat_app"
+            android:textColor="@color/black"
+            android:textSize="36sp"
+            android:textStyle="bold"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/startFragmentImageView" />
+
+        <View
+            android:id="@+id/startFragmentView1"
+            android:layout_width="0dp"
+            android:layout_height="2dp"
+            android:layout_marginTop="15dp"
+            android:background="#dfdfdf"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/startFragmentLogoTxt" />
+
+        <LinearLayout
+            android:id="@+id/startFragmentLinear1"
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="vertical"
+            android:padding="10dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/startFragmentView1">
+
+            <Button
+                android:textStyle="bold"
+                android:padding="10dp"
+                android:id="@+id/startFragmentLoginBtn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="#8D9CC8"
+                android:text="@string/login"
+                android:textSize="20sp" />
+
+            <Button
+                android:textStyle="bold"
+                android:padding="10dp"
+                android:id="@+id/startFragmentSignupBtn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:backgroundTint="#8D9CC8"
+                android:text="@string/signup"
+                android:textSize="20sp" />
+
+            <TextView
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:layout_marginTop="10dp"
+                android:gravity="center"
+                android:text="@string/login_or_create_an_account_to_get_started"
+                android:textColor="@color/black"
+                android:textSize="16sp"
+                android:textStyle="italic|bold" />
+        </LinearLayout>
+
+        <View
+            android:id="@+id/startFragmentView2"
+            android:layout_width="0dp"
+            android:layout_height="2dp"
+            android:layout_marginTop="15dp"
+            android:background="#dfdfdf"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/startFragmentLinear1" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>

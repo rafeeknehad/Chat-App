@@ -1,0 +1,301 @@
+<?xml version="1.0" encoding="utf-8"?>
+<ScrollView xmlns:android="http://schemas.android.com/apk/res/android"
+    xmlns:app="http://schemas.android.com/apk/res-auto"
+    xmlns:tools="http://schemas.android.com/tools"
+    android:layout_width="match_parent"
+    android:layout_height="match_parent"
+    android:orientation="vertical"
+    tools:context=".ui.navigation2.ProfileFragment">
+
+    <androidx.constraintlayout.widget.ConstraintLayout
+        android:layout_width="fill_parent"
+        android:layout_height="wrap_content">
+
+        <androidx.constraintlayout.widget.ConstraintLayout
+            android:id="@+id/profileFragmentConstraint1"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="50dp"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent">
+
+            <de.hdodenhof.circleimageview.CircleImageView
+                android:id="@+id/profileFragmentUserPhoto"
+                android:layout_width="200dp"
+                android:layout_height="200dp"
+                android:src="@mipmap/account"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+
+            <ProgressBar
+                android:id="@+id/profileFragmentUserImageProgressBar"
+                android:layout_width="wrap_content"
+                android:layout_height="wrap_content"
+                android:indeterminateDrawable="@drawable/progress_bg"
+                android:visibility="gone"
+                app:layout_constraintBottom_toBottomOf="parent"
+                app:layout_constraintEnd_toEndOf="parent"
+                app:layout_constraintStart_toStartOf="parent"
+                app:layout_constraintTop_toTopOf="parent" />
+
+            <com.google.android.material.floatingactionbutton.FloatingActionButton
+                android:id="@+id/profileFragmentTakePhoto"
+                android:layout_width="50dp"
+                android:layout_height="50dp"
+                android:layout_marginStart="120dp"
+                android:layout_marginTop="100dp"
+                android:backgroundTint="@color/white"
+                android:contentDescription="@string/todo"
+                android:src="@drawable/photo_icon"
+                app:fabCustomSize="50dp"
+                app:layout_constraintBottom_toBottomOf="@id/profileFragmentUserPhoto"
+                app:layout_constraintEnd_toEndOf="@id/profileFragmentUserPhoto"
+                app:layout_constraintStart_toStartOf="@id/profileFragmentUserPhoto" />
+        </androidx.constraintlayout.widget.ConstraintLayout>
+
+        <View
+            android:id="@+id/profileFragmentView1"
+            android:layout_width="0dp"
+            android:layout_height="2dp"
+            android:layout_marginTop="15dp"
+            android:background="#dfdfdf"
+            app:layout_constraintLeft_toLeftOf="parent"
+            app:layout_constraintRight_toRightOf="parent"
+            app:layout_constraintTop_toBottomOf="@+id/profileFragmentConstraint1" />
+
+        <LinearLayout
+            android:layout_width="match_parent"
+            android:layout_height="wrap_content"
+            android:layout_marginTop="10dp"
+            android:orientation="vertical"
+            android:weightSum="5"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toBottomOf="@id/profileFragmentView1">
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="10dp"
+                tools:ignore="UselessParent">
+
+                <TextView
+                    android:id="@+id/profileFragmentTextDisplayName"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="5"
+                    android:text="@string/user_name"
+                    android:visibility="visible" />
+
+                <EditText
+                    android:id="@+id/profileFragmentEditTextDisplayName"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="5"
+                    android:imeOptions="actionDone"
+                    android:inputType="text"
+                    android:text="@string/user_name"
+                    android:visibility="gone"
+                    tools:ignore="Autofill,LabelFor" />
+
+
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/profileFragmentFab1"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:background="@null"
+                    android:contentDescription="@string/todo"
+                    android:outlineProvider="none"
+                    android:src="@drawable/edit_icon"
+                    app:backgroundTint="@android:color/transparent"
+                    app:fabCustomSize="30dp" />
+            </LinearLayout>
+
+            <View
+                android:id="@+id/profileFragmentView2"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_marginTop="5dp"
+                android:background="#dfdfdf" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="10dp"
+                tools:ignore="UselessParent">
+
+                <TextView
+                    android:id="@+id/profileFragmentTextEmail"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="5"
+                    android:text="@string/email"
+                    android:visibility="visible" />
+
+                <EditText
+                    android:id="@+id/profileFragmentEditEmail"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="5"
+                    android:imeOptions="actionDone"
+                    android:inputType="textEmailAddress"
+                    android:text="@string/email"
+                    android:visibility="gone"
+                    tools:ignore="Autofill,LabelFor" />
+
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/profileFragmentFab2"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:background="@null"
+                    android:contentDescription="@string/todo"
+                    android:outlineProvider="none"
+                    android:src="@drawable/edit_icon"
+                    app:backgroundTint="@android:color/transparent"
+                    app:fabCustomSize="30dp" />
+            </LinearLayout>
+
+            <View
+                android:id="@+id/profileFragmentView3"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_marginTop="5dp"
+                android:background="#dfdfdf" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="10dp"
+                tools:ignore="UselessParent">
+
+                <TextView
+                    android:id="@+id/profileFragmentTextNumber"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="5"
+                    android:text="@string/number"
+                    android:visibility="visible" />
+
+                <EditText
+                    android:id="@+id/profileFragmentEditTextNumber"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="5"
+                    android:imeOptions="actionDone"
+                    android:inputType="number"
+                    android:text="@string/number"
+                    android:visibility="gone"
+                    tools:ignore="Autofill,LabelFor" />
+
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/profileFragmentFab3"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:background="@null"
+                    android:contentDescription="@string/todo"
+                    android:outlineProvider="none"
+                    android:src="@drawable/edit_icon"
+                    app:backgroundTint="@android:color/transparent"
+                    app:fabCustomSize="30dp" />
+            </LinearLayout>
+
+            <View
+                android:id="@+id/profileFragmentView4"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_marginTop="5dp"
+                android:background="#dfdfdf" />
+
+            <LinearLayout
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:orientation="horizontal"
+                android:padding="10dp"
+                tools:ignore="UselessParent">
+
+                <TextView
+                    android:id="@+id/profileFragmentTextPassword"
+                    android:layout_width="0dp"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="5"
+                    android:text="@string/password"
+                    android:visibility="visible" />
+
+                <com.google.android.material.textfield.TextInputLayout
+                    android:id="@+id/profileFragmentTextLayoutPassword"
+                    android:layout_width="wrap_content"
+                    android:layout_height="wrap_content"
+                    android:layout_gravity="center"
+                    android:layout_weight="5"
+                    android:visibility="gone"
+                    app:passwordToggleEnabled="true">
+
+                    <EditText
+                        android:id="@+id/profileFragmentEditTextPassword"
+                        android:layout_width="match_parent"
+                        android:layout_height="wrap_content"
+                        android:imeOptions="actionDone"
+                        android:inputType="textPassword"
+                        android:paddingTop="10dp"
+                        android:text="@string/password"
+                        android:visibility="visible"
+                        tools:ignore="Autofill,LabelFor" />
+                </com.google.android.material.textfield.TextInputLayout>
+
+                <com.google.android.material.floatingactionbutton.FloatingActionButton
+                    android:id="@+id/profileFragmentFab4"
+                    android:layout_width="30dp"
+                    android:layout_height="30dp"
+                    android:background="@null"
+                    android:contentDescription="@string/todo"
+                    android:outlineProvider="none"
+                    android:src="@drawable/edit_icon"
+                    app:backgroundTint="@android:color/transparent"
+                    app:fabCustomSize="30dp" />
+            </LinearLayout>
+
+            <View
+                android:id="@+id/profileFragmentView5"
+                android:layout_width="match_parent"
+                android:layout_height="2dp"
+                android:layout_marginTop="5dp"
+                android:background="#dfdfdf" />
+
+            <Button
+                android:id="@+id/profileFragmentSubmitBtn"
+                android:layout_width="match_parent"
+                android:layout_height="wrap_content"
+                android:backgroundTint="@color/black"
+                android:text="@string/submit"
+                android:textAllCaps="false"
+                android:textColor="@color/white"
+                android:textStyle="italic|bold" />
+        </LinearLayout>
+
+        <ProgressBar
+            android:id="@+id/profileFragmentProgressBar"
+            android:layout_width="wrap_content"
+            android:layout_height="wrap_content"
+            android:indeterminateDrawable="@drawable/progress_bg"
+            android:visibility="gone"
+            app:layout_constraintBottom_toBottomOf="parent"
+            app:layout_constraintEnd_toEndOf="parent"
+            app:layout_constraintStart_toStartOf="parent"
+            app:layout_constraintTop_toTopOf="parent" />
+
+    </androidx.constraintlayout.widget.ConstraintLayout>
+
+</ScrollView>
